@@ -23,7 +23,8 @@ import {
   DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import Button from './src/Components/Button'
+import Button from './src/Components/Button';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 const App: () => React$Node = () => {
   return (
@@ -42,6 +43,8 @@ const App: () => React$Node = () => {
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Button/>
+              <Icon name="rocket" size={30} color="#900" />
+
               <Text style={styles.sectionTitle}>Step One</Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.js</Text> to change this
