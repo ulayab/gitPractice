@@ -13,20 +13,7 @@ import Button from './src/Components/Button';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
-
-function HomeScreen({navigation}) {
-  console.warn('navigation>>', navigation);
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Home Screen</Text>
-      <Button
-        title="Go to Details XXX"
-        action={() => navigation.navigate('Details')}
-      />
-      <Icon name="rocket" size={30} color="#900" />
-    </View>
-  );
-}
+import HomeScreen from './src/Screens/HomeScreen';
 
 function DetailsScreen() {
   return (
