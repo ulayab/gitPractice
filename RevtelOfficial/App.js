@@ -8,34 +8,35 @@
 
 import React from 'react';
 import {View, Text} from 'react-native';
-
-import Button from './src/Components/Button';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {createStackNavigator} from '@react-navigation/stack';
 import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import HomeScreen from './src/Screens/HomeScreen';
 
-function DetailsScreen() {
+function FavoriteScreen() {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Details Screen</Text>
+      <Text>Favorite Screen</Text>
+    </View>
+  );
+}
+function AboutScreen() {
+  return (
+    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <Text>About Screen</Text>
     </View>
   );
 }
 
-const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen
-          name="Home"
-          component={HomeScreen}
-          options={{title: 'Overview'}}
-        />
-        <Stack.Screen name="Details" component={DetailsScreen} />
-      </Stack.Navigator>
+      <Tab.Navigator initialRouteName="Home">
+        <Tab.Screen name="Home" component={HomeScreen} />
+        <Tab.Screen name="Favorite" component={FavoriteScreen} />
+        <Tab.Screen name="About" component={AboutScreen} />
+      </Tab.Navigator>
     </NavigationContainer>
   );
 }
